@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import NewsletterSection from './components/NewsletterSection'
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import RecipeDetailPage from './pages/RecipeDetailPage'
 import CookingTipsPage from './pages/CookingTipsPage'
@@ -20,6 +22,8 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+      <NewsletterSection />
+      <Footer />
     </div>
   )
 }

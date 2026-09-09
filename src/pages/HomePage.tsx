@@ -1,19 +1,14 @@
 import HeroSection from '../components/HeroSection'
+import AboutSection from '../components/AboutSection'
 import FeaturedRecipes from '../components/FeaturedRecipes'
 import RecipesShowcase from '../components/RecipesShowcase'
-import breakfast from '../../dist/assets/icons/breakfast.svg'
-import lunch from '../../dist/assets/icons/lunch.svg'
-import dinner from '../../dist/assets/icons/dinner.svg'
-import dessert from '../../dist/assets/icons/dessert.svg'
-import quickBite from '../../dist/assets/icons/quick-bite.svg'
 
 export default function HomePage() {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* tes commit */}
       <HeroSection />
-      
+
       <div className="rounded-4xl bg-primary-4 w-full p-10 flex justify-between items-end">
         <div>
           <div className="w-fit rounded-xl bg-primary-3 px-2 py-1 text-button font-roboto uppercase text-background">
@@ -38,23 +33,23 @@ export default function HomePage() {
 
         <div className="w-2/5 flex flex-col gap-4">
           <div className="flex justify-between py-4 border-b border-dark/16 items-center">
-            <img src={breakfast} alt="" />
+            <img src="/icons/breakfast.svg" alt="" />
             <p className="text-subtitle font-montserrat text-dark uppercase">Breakfast</p>
           </div>
           <div className="flex justify-between py-4 border-b border-dark/16 items-center">
-            <img src={lunch} alt="" />
+            <img src="/icons/lunch.svg" alt="" />
             <p className="text-subtitle font-montserrat text-dark uppercase">Lunch</p>
           </div>
           <div className="flex justify-between py-4 border-b border-dark/16 items-center">
-            <img src={dinner} alt="" />
+            <img src="/icons/dinner.svg" alt="" />
             <p className="text-subtitle font-montserrat text-dark uppercase">Dinner</p>
           </div>
           <div className="flex justify-between py-4 border-b border-dark/16 items-center">
-            <img src={dessert} alt="" />
+            <img src="/icons/dessert.svg" alt="" />
             <p className="text-subtitle font-montserrat text-dark uppercase">Dessert</p>
           </div>
           <div className="flex justify-between py-4 border-b border-dark/16 items-center">
-            <img src={quickBite} alt="" />
+            <img src="/icons/quick-bite.svg" alt="" />
             <p className="text-subtitle font-montserrat text-dark uppercase">Quick Bite!</p>
           </div>
         </div>
@@ -63,6 +58,8 @@ export default function HomePage() {
       <FeaturedRecipes />
 
       <RecipesShowcase />
+
+      <AboutSection />
     </div>
   )
 }
