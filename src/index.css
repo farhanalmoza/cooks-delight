@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #262522;
+  --color-background: #f0ebe1;
+  --color-primary-1: #9fdc26;
+  --color-primary-2: #f29c33;
+  --color-primary-3: #ee6352;
+  --color-primary-4: #c4e5fc;
+  --color-light: #fffbf2;
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  /* Text styles - Desktop */
+  --text-headline-1: 80px;
+  --text-headline-1--line-height: 1;
+  --text-headline-1--letter-spacing: -0.01em;
+  --text-headline-1--font-weight: 800;
+  --text-header-2: 40px;
+  --text-header-2--line-height: 1;
+  --text-header-2--font-weight: 600;
+  --text-header-3: 24px;
+  --text-header-3--line-height: 1.2;
+  --text-header-3--font-weight: 700;
+  --text-paragraph-1: 21px;
+  --text-paragraph-1--line-height: 1.4;
+  --text-paragraph-1--letter-spacing: 0.01em;
+  --text-paragraph-1--font-weight: 400;
+  --text-paragraph-2: 16px;
+  --text-paragraph-2--line-height: 1.4;
+  --text-paragraph-2--font-weight: 300;
+  --text-paragraph-2--letter-spacing: 0.01em;
+  --text-subtitle: 18px;
+  --text-subtitle--line-height: 1;
+  --text-subtitle--font-weight: 600;
+  --text-subtitle--letter-spacing: 0.02em;
+  --text-tagline: 18px;
+  --text-tagline--line-height: 1;
+  --text-button: 14px;
+  --text-button--line-height: 1;
+  --text-button--font-weight: 500;
+  --text-small: 12px;
+  --text-small--line-height: 1.2;
+  --text-small--letter-spacing: 0.01em;
+  --text-small--font-weight: 500;
+  --text-link: 16px;
+  --text-link--line-height: 1.2;
+  --text-bold: 16px;
+  --text-bold--line-height: 1.2;
+
+  /* Text styles - Mobile */
+  --text-mobile-header-1: 38px;
+  --text-mobile-header-1--line-height: 1;
+  --text-mobile-header-2: 26px;
+  --text-mobile-header-2--line-height: 1;
+  --text-mobile-header-3: 21px;
+  --text-mobile-header-3--line-height: 1.2;
+  --text-mobile-subtitle: 16px;
+  --text-mobile-subtitle--line-height: 1;
+  --text-mobile-tagline: 16px;
+  --text-mobile-tagline--line-height: 1;
+  --text-mobile-paragraph-1: 16px;
+  --text-mobile-paragraph-1--line-height: 1.4;
+  --text-mobile-paragraph-2: 14px;
+  --text-mobile-paragraph-2--line-height: 1.4;
+  --text-mobile-bold: 14px;
+  --text-mobile-bold--line-height: 1.4;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--color-dark);
+}
