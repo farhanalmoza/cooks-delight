@@ -11,6 +11,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col gap-6">
+      {/* tes commit */}
       <HeroSection />
       
       <div className="rounded-4xl bg-primary-4 w-full p-10 flex justify-between items-end">
