@@ -10,9 +10,9 @@ export default function EmptyState({
   action?: ReactNode
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-slate-300 py-16 text-center">
-      <p className="text-base font-medium text-slate-700">{title}</p>
-      {description && <p className="text-sm text-slate-500">{description}</p>}
+    <div className="flex flex-col items-center justify-center gap-2 rounded-4xl border border-dashed border-dark/24 py-24 text-center">
+      <p className="text-header-3 font-montserrat text-dark">{title}</p>
+      {description && <p className="text-paragraph-2 text-dark/60">{description}</p>}
       {action}
     </div>
   )

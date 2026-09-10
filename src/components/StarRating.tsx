@@ -14,7 +14,7 @@ export default function StarRating({
           onClick={() => onChange(star === value ? 0 : star)}
           aria-label={`Beri rating ${star} bintang`}
           className={`text-2xl leading-none transition-colors ${
-            star <= value ? 'text-amber-400' : 'text-slate-300 hover:text-amber-300'
+            star <= value ? 'text-primary-2' : 'text-dark/16 hover:text-primary-2/60'
           }`}
         >
           ★

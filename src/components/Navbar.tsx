@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 const menuItems = [
   { to: '/', label: 'Home', end: true },
@@ -13,6 +13,7 @@ export default function Navbar() {
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     if (searchOpen) inputRef.current?.focus()
@@ -29,7 +30,7 @@ export default function Navbar() {
 
   return (
     <header className="mb-4 px-6 py-4 border border-dark/24 rounded-4xl">
-      <div className="mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-4">
+      <div className="mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4">
         <NavLink to="/" className="flex w-fit items-center gap-2 text-md font-bold text-dark tracking-normal">
           <img src="/logo.svg" alt="Cooks Delight" className="h-10 w-10" />
           <span className="flex flex-col leading-none">
@@ -38,26 +39,32 @@ export default function Navbar() {
           </span>
         </NavLink>
         <nav className="flex items-center justify-center gap-8 -mb-2">
-          {menuItems.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.end}>
-              {({ isActive }) => (
-                <span className="flex flex-col items-center gap-2">
-                  <span
-                    className={`text-sm uppercase tracking-wide transition-colors ${
-                      isActive ? 'font-bold text-dark' : 'font-medium text-dark/40 hover:text-dark/70'
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    className={`h-1 w-full rounded-b-xs transition-colors -mt-1 ${
-                      isActive ? 'bg-primary-3' : 'bg-transparent'
-                    }`}
-                  />
-                </span>
-              )}
-            </NavLink>
-          ))}
+          {menuItems.map((item) => {
+            const forcedActive = item.to === '/recipes' && location.pathname.startsWith('/recipe/')
+            return (
+              <NavLink key={item.to} to={item.to} end={item.end}>
+                {({ isActive }) => {
+                  const active = isActive || forcedActive
+                  return (
+                    <span className="flex flex-col items-center gap-2">
+                      <span
+                        className={`text-sm uppercase tracking-wide transition-colors ${
+                          active ? 'font-bold text-dark' : 'font-medium text-dark/40 hover:text-dark/70'
+                        }`}
+                      >
+                        {item.label}
+                      </span>
+                      <span
+                        className={`h-1 w-full rounded-b-xs transition-colors -mt-1 ${
+                          active ? 'bg-primary-3' : 'bg-transparent'
+                        }`}
+                      />
+                    </span>
+                  )
+                }}
+              </NavLink>
+            )
+          })}
         </nav>
         <div className="flex items-center justify-end gap-3">
           <div className="relative flex items-center">

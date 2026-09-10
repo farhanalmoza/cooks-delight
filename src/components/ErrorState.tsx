@@ -6,13 +6,13 @@ export default function ErrorState({
   onRetry?: () => void
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 rounded-xl border border-red-200 bg-red-50 py-16 text-center">
-      <p className="text-sm font-medium text-red-700">{message}</p>
+    <div className="flex flex-col items-center justify-center gap-3 rounded-4xl border border-primary-3/40 bg-primary-3/10 py-24 text-center">
+      <p className="text-paragraph-2 font-medium text-primary-3">{message}</p>
       {onRetry && (
         <button
           type="button"
           onClick={onRetry}
-          className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700"
+          className="rounded-full bg-dark px-6 py-3 text-button font-roboto uppercase tracking-wide text-light transition-colors hover:bg-dark/90"
         >
           Coba lagi
         </button>

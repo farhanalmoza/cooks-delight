@@ -15,7 +15,7 @@ export default function RecipeCard({ meal }: { meal: Meal }) {
         )}
       </div>
       <div className="rounded-b-3xl border border-dark/16 p-6">
-        <h3 className="mb-2 text-header-3 font-montserrat text-dark">{meal.strMeal}</h3>
+        <h3 className="mb-2 truncate text-header-3 font-montserrat text-dark">{meal.strMeal}</h3>
         <p className="mb-8 text-paragraph-2 text-dark/60">
           {getShortDescription(meal.strInstructions)}
         </p>

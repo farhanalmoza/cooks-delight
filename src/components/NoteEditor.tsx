@@ -22,7 +22,7 @@ export default function NoteEditor({
       }}
       placeholder="Tulis catatan pribadimu tentang resep ini..."
       rows={3}
-      className="w-full resize-none rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-200"
+      className="w-full resize-none rounded-2xl border border-dark/16 px-4 py-3 text-paragraph-2 text-dark placeholder:text-dark/40 focus:border-primary-3 focus:outline-none"
     />
   )
 }

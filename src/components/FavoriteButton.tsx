@@ -21,13 +21,11 @@ export default function FavoriteButton({
         toggleFavorite(meal)
       }}
       aria-label={isFavorite ? 'Hapus dari favorit' : 'Tambah ke favorit'}
-      className={`flex items-center justify-center rounded-full transition-colors ${
-        size === 'sm' ? 'h-8 w-8 text-lg' : 'h-10 w-10 text-xl'
+      className={`flex items-center justify-center rounded-full shadow-md transition-colors ${
+        size === 'sm' ? 'h-8 w-8 text-base' : 'h-11 w-11 text-xl'
       } ${
-        isFavorite
-          ? 'bg-orange-500 text-white'
-          : 'bg-white/90 text-slate-500 hover:text-orange-500'
-      } shadow`}
+        isFavorite ? 'bg-primary-3 text-background' : 'bg-light/90 text-dark hover:text-primary-3'
+      }`}
     >
       {isFavorite ? '♥' : '♡'}
     </button>
