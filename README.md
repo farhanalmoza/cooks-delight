@@ -1,32 +1,60 @@
-# React + TypeScript + Vite
+# Cooks Delight
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A cooking recipe & blog website built with React, TypeScript, and Tailwind CSS. Fully responsive (desktop & mobile).
 
-Currently, two official plugins are available:
+![Cooks Delight preview](public/images/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Design
 
-## React Compiler
+UI design is based on the free Figma community template:
+[Free Cooking Recipes Blog Template](https://www.figma.com/community/file/1331351586208563684/free-cooking-recipes-blog-template)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Data Source
 
-## Expanding the Oxlint configuration
+Recipe data (titles, images, ingredients, instructions, categories, etc.) is fetched live from
+[TheMealDB](https://www.themealdb.com/api.php), a free public recipe API. No API key is required for the endpoints used in this project.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Tech Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) — build tool & dev server
+- [Tailwind CSS v4](https://tailwindcss.com/) — CSS-first config (`src/index.css`)
+- [React Router v7](https://reactrouter.com/) — routing
+- [Oxlint](https://oxc.rs/) — linting
+
+## Pages
+
+| Route | Description |
+| --- | --- |
+| `/` | Home — hero, category explorer, featured recipes, recipe search/filter, about teaser |
+| `/recipes` | Browse all recipes — filter by category or search by name |
+| `/recipe/:id` | Recipe detail — ingredients, instructions, similar recipes, share, author bio |
+| `/cooking-tips` | Cooking tips, newest recipes, mastering the basics, dietary guides, tips & tricks |
+| `/about` | About Us — story, gallery, featured recipes |
+
+## Getting Started
+
+```bash
+npm install
+npm run dev       # start dev server
+npm run build     # production build
+npm run preview   # preview production build
+npm run lint       # run oxlint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Project Structure
+
+```
+src/
+├── api/          # TheMealDB API calls
+├── components/    # reusable UI sections & components
+├── hooks/        # data-fetching hooks
+├── pages/        # route-level pages
+├── types/        # shared TypeScript types
+└── utils/        # helper functions
+```
+
+## Notes
+
+- The newsletter subscribe form and social media links are UI-only placeholders — not connected to a real backend or actual social accounts.
+- Some content (e.g. cooking tips, "Mastering the Basics" articles) is static/manually authored, since TheMealDB only provides recipe data, not blog-style articles.
