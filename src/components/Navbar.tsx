@@ -109,12 +109,12 @@ export default function Navbar() {
               />
             )}
           </div>
-          <button
-            type="button"
+          <a
+            href="#subscribe"
             className="rounded-full bg-dark px-6 py-3 text-sm font-bold uppercase tracking-wide text-light transition-colors hover:bg-dark/90"
           >
             Subscribe
-          </button>
+          </a>
         </div>
       </div>
     </header>

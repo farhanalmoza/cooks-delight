@@ -31,6 +31,13 @@ export async function getMealById(id: string): Promise<Meal | null> {
   return data.meals?.[0] ?? null
 }
 
+export async function searchMealsByName(query: string): Promise<Meal[]> {
+  const data = await fetchJson<{ meals: Meal[] | null }>(
+    `${BASE_URL}/search.php?s=${encodeURIComponent(query)}`,
+  )
+  return data.meals ?? []
+}
+
 export async function getRandomMeal(): Promise<Meal | null> {
   const data = await fetchJson<{ meals: Meal[] | null }>(`${BASE_URL}/random.php`)
   return data.meals?.[0] ?? null

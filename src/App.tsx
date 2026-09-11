@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import NewsletterSection from './components/NewsletterSection'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
+import RecipesPage from './pages/RecipesPage'
 import RecipeDetailPage from './pages/RecipeDetailPage'
 import CookingTipsPage from './pages/CookingTipsPage'
 import AboutUsPage from './pages/AboutUsPage'
@@ -15,7 +16,7 @@ export default function App() {
       <main className="mx-auto">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/recipes" element={<HomePage />} />
+          <Route path="/recipes" element={<RecipesPage />} />
           <Route path="/recipe/:id" element={<RecipeDetailPage />} />
           <Route path="/cooking-tips" element={<CookingTipsPage />} />
           <Route path="/about" element={<AboutUsPage />} />

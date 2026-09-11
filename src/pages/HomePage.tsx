@@ -6,7 +6,7 @@ import RecipesShowcase from '../components/RecipesShowcase'
 export default function HomePage() {
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 pb-16">
       <HeroSection />
 
       <div className="rounded-4xl bg-primary-4 w-full p-10 flex justify-between items-end">

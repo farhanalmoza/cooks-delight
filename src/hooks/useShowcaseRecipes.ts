@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { filterMealsByCategory, getMealById, getRandomMeal } from '../api/themealdb'
+import { filterMealsByCategory, getMealById, getRandomMeal, searchMealsByName } from '../api/themealdb'
 import type { Meal } from '../types/meal'
 
 const COUNT = 6
 
-export function useShowcaseRecipes(category: string) {
+export function useShowcaseRecipes(category: string, search = '') {
   const [meals, setMeals] = useState<Meal[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -15,6 +15,11 @@ export function useShowcaseRecipes(category: string) {
     setError(null)
 
     async function run() {
+      const term = search.trim()
+      if (term) {
+        return searchMealsByName(term)
+      }
+
       if (category === 'All') {
         const collected = new Map<string, Meal>()
         let attempts = 0
@@ -46,7 +51,7 @@ export function useShowcaseRecipes(category: string) {
     return () => {
       cancelled = true
     }
-  }, [category])
+  }, [category, search])
 
   return { meals, loading, error }
 }

@@ -70,6 +70,10 @@
   --text-mobile-bold--line-height: 1.4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: var(--color-dark);

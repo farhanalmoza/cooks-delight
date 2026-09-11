@@ -10,7 +10,8 @@ export default function NewsletterSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden rounded-4xl bg-primary-3 bg-cover bg-center px-8 py-20"
+      id="subscribe"
+      className="relative w-full overflow-hidden rounded-4xl bg-primary-3 bg-cover bg-center px-8 py-20 scroll-mt-6"
       style={{ backgroundImage: 'url("/images/cta-bg.svg")' }}
     >
 

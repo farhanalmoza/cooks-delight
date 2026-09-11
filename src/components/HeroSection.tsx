@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function HeroSection() {
   return (
     <section
@@ -16,12 +18,12 @@ export default function HeroSection() {
           <br />
           our passion for cooking fill your kitchen
         </p>
-        <button
-          type="button"
+        <Link
+          to="/recipes"
           className="w-fit rounded-full bg-primary-2 px-6 py-3 text-button font-roboto uppercase tracking-wide text-dark transition-colors hover:bg-primary-2/90"
         >
           Explore Recipes
-        </button>
+        </Link>
       </div>
     </section>
   )
