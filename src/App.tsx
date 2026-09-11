@@ -11,7 +11,7 @@ import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background px-16 py-6">
+    <div className="min-h-screen bg-background p-4 md:px-16 md:py-6">
       <Navbar />
       <main className="mx-auto">
         <Routes>

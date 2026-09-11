@@ -2,6 +2,14 @@ import { useRef, useState } from 'react'
 import { useFeaturedMeals } from '../hooks/useFeaturedMeals'
 import RecipeCard from './RecipeCard'
 
+function chunk<T>(items: T[], size: number): T[][] {
+  const pages: T[][] = []
+  for (let i = 0; i < items.length; i += size) {
+    pages.push(items.slice(i, i + size))
+  }
+  return pages
+}
+
 function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
   return (
     <svg
@@ -41,8 +49,8 @@ export default function FeaturedRecipes() {
 
   return (
     <div className="w-full rounded-4xl border border-dark/24 p-4 pt-10">
-      <div className="mb-8 flex items-center justify-between">
-        <h2 className="text-header-2 font-montserrat uppercase text-dark">Featured Recipes</h2>
+      <div className="mb-8 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+        <h2 className="text-mobile-header-2 md:text-header-2 font-montserrat uppercase text-dark">Featured Recipes</h2>
         <div className="flex items-center gap-3">
           <button
             type="button"
@@ -72,11 +80,18 @@ export default function FeaturedRecipes() {
         <div
           ref={trackRef}
           onScroll={updateEdges}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth scrollbar-none [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth scrollbar-none md:gap-6 [&::-webkit-scrollbar]:hidden"
         >
-          {meals.map((meal) => (
-            <div key={meal.idMeal} className="w-[calc(50%-12px)] shrink-0 snap-start">
-              <RecipeCard meal={meal} />
+          {chunk(meals, 2).map((pair, pageIdx) => (
+            <div
+              key={pageIdx}
+              className="grid w-full shrink-0 snap-start grid-cols-1 gap-3 md:contents"
+            >
+              {pair.map((meal) => (
+                <div key={meal.idMeal} className="md:w-[calc(50%-12px)] md:shrink-0 md:snap-start">
+                  <RecipeCard meal={meal} />
+                </div>
+              ))}
             </div>
           ))}
         </div>

@@ -55,7 +55,9 @@
   --text-mobile-header-1: 38px;
   --text-mobile-header-1--line-height: 1;
   --text-mobile-header-2: 26px;
+  --text-mobile-header-2--font-weight: 800;
   --text-mobile-header-2--line-height: 1;
+  --text-mobile-header-2--letter-spacing: 0.01em;
   --text-mobile-header-3: 21px;
   --text-mobile-header-3--line-height: 1.2;
   --text-mobile-subtitle: 16px;
@@ -65,7 +67,9 @@
   --text-mobile-paragraph-1: 16px;
   --text-mobile-paragraph-1--line-height: 1.4;
   --text-mobile-paragraph-2: 14px;
+  --text-mobile-paragraph-2--font-weight: 300;
   --text-mobile-paragraph-2--line-height: 1.4;
+  --text-mobile-paragraph-2--letter-spacing: 0.01em;
   --text-mobile-bold: 14px;
   --text-mobile-bold--line-height: 1.4;
 }

@@ -23,11 +23,10 @@ export default function RecipesShowcase() {
         <span className="w-fit rounded-full bg-primary-3 px-4 py-1 text-small font-roboto uppercase text-background">
           Recipes
         </span>
-        <h2 className="mt-4 text-header-2 font-montserrat uppercase text-dark">
-          Embark on a <br />
-          Journey
+        <h2 className="mt-4 text-mobile-header-2 md:text-header-2 font-montserrat uppercase text-dark">
+          Embark on a Journey
         </h2>
-        <p className="mt-4 text-paragraph-2 text-dark/60">
+        <p className="mt-4 text-mobile-paragraph-2 md:text-paragraph-2 text-dark/60">
           With our diverse collection of recipes we have something to satisfy every palate.
         </p>
       </div>
@@ -46,7 +45,7 @@ export default function RecipesShowcase() {
           </button>
         </div>
       ) : (
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-wrap md:items-center md:justify-center gap-3">
           {FILTERS.map((filter) => {
             const isActive = filter === category
             return (
@@ -79,7 +78,7 @@ export default function RecipesShowcase() {
       )}
 
       {!loading && !error && meals.length > 0 && (
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {meals.map((meal) => (
             <RecipeCard key={meal.idMeal} meal={meal} />
           ))}

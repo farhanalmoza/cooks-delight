@@ -9,16 +9,16 @@ export default function HomePage() {
     <div className="flex flex-col gap-6 pb-16">
       <HeroSection />
 
-      <div className="rounded-4xl bg-primary-4 w-full p-10 flex justify-between items-end">
+      <div className="rounded-4xl bg-primary-4 w-full py-10 px-6 md:px-10 flex flex-col md:flex-row justify-between items-start md:items-end">
         <div>
-          <div className="w-fit rounded-xl bg-primary-3 px-2 py-1 text-button font-roboto uppercase text-background">
+          <div className="w-fit rounded-xl bg-primary-3 px-4 py-1 text-button font-roboto uppercase text-background">
             Explore
           </div>
-          <h1 className="text-header-2 font-montserrat uppercase mt-4 mb-4">
+          <h1 className="text-mobile-header-2 md:text-header-2 font-montserrat uppercase mt-4 mb-4">
             OUR DIVERSE <br />
             PALETTE
           </h1>
-          <p className="text-paragraph-2 mb-10">
+          <p className="text-mobile-paragraph-2 md:text-paragraph-2 mb-10 text-dark/80">
             If you are a breakfast enthusiast, a connoisseur of savory delights, or <br />
             on the lookout for irresistible desserts, our curated selection has <br />
             something to satisfy every palate.
@@ -31,7 +31,7 @@ export default function HomePage() {
           </button>
         </div>
 
-        <div className="w-2/5 flex flex-col gap-4">
+        <div className="w-full md:w-2/5 flex flex-col gap-4 mt-16 md:mt-0">
           <div className="flex justify-between py-4 border-b border-dark/16 items-center">
             <img src="/icons/breakfast.svg" alt="" />
             <p className="text-subtitle font-montserrat text-dark uppercase">Breakfast</p>

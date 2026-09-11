@@ -14,18 +14,20 @@ export default function RecipeCard({ meal }: { meal: Meal }) {
           <VeganBadge className="absolute -bottom-6 right-6 h-16.5 w-16.5 drop-shadow" />
         )}
       </div>
-      <div className="rounded-b-3xl border border-dark/16 p-6">
-        <h3 className="mb-2 truncate text-header-3 font-montserrat text-dark">{meal.strMeal}</h3>
+      <div className="rounded-b-3xl border border-dark/16 p-4 md:p-6">
+        <h3 className="mb-2 line-clamp-2 text-header-3 font-montserrat text-dark">
+          {meal.strMeal}
+        </h3>
         <p className="mb-8 text-paragraph-2 text-dark/60">
           {getShortDescription(meal.strInstructions)}
         </p>
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <span className="text-small uppercase tracking-wide text-dark">
             {minutes} min - {difficulty} prep - {serves} serves
           </span>
           <Link
             to={`/recipe/${meal.idMeal}`}
-            className="shrink-0 rounded-full border border-dark px-5 py-2.5 text-button font-roboto uppercase text-dark transition-colors hover:bg-dark hover:text-light"
+            className="w-full shrink-0 rounded-full border border-dark px-5 py-2.5 text-center text-button font-roboto uppercase text-dark transition-colors hover:bg-dark hover:text-light md:w-fit"
           >
             View Recipe
           </Link>
