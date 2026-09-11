@@ -2,6 +2,8 @@
 
 A cooking recipe & blog website built with React, TypeScript, and Tailwind CSS. Fully responsive (desktop & mobile).
 
+**Live demo:** [cooks-delight-hazel.vercel.app](https://cooks-delight-hazel.vercel.app/)
+
 ![Cooks Delight preview](public/images/preview.png)
 
 ## Design
