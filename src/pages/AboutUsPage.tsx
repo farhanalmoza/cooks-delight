@@ -6,7 +6,7 @@ export default function AboutUsPage() {
   return (
     <div className="flex flex-col gap-16 pt-16 pb-15">
       <div className="grid items-center gap-10 md:grid-cols-2">
-        <h1 className="text-headline-1 font-montserrat uppercase leading-none text-dark">
+        <h1 className="text-mobile-header-1 font-montserrat uppercase leading-none text-dark md:text-headline-1">
           Welcome to
           <br />
           My Culinary
@@ -14,7 +14,7 @@ export default function AboutUsPage() {
           Haven!
         </h1>
         <div className="flex flex-col gap-8">
-          <p className="text-paragraph-1 font-roboto text-dark/60">
+          <p className="text-mobile-paragraph-1 font-roboto text-dark/60 md:text-paragraph-1">
             Bonjour and welcome to the heart of my kitchen! I'm Isabella Russo, the culinary
             enthusiast behind this haven of flavors, Cooks Delight. Join me on a gastronomic
             journey where each dish carries a story, and every recipe is a crafted symphony of

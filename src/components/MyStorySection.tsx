@@ -49,12 +49,10 @@ export default function MyStorySection() {
         </div>
 
         <div className="flex flex-col gap-6">
-          <h2 className="text-header-2 font-montserrat uppercase leading-tight text-dark">
-            From Italian Roots to
-            <br />
-            Global Palates
+          <h2 className="text-mobile-header-2 md:text-header-2 font-montserrat uppercase leading-tight text-dark">
+            From Italian Roots to Global Palates
           </h2>
-          <div className="flex flex-col gap-4 text-paragraph-1 font-roboto text-dark/60">
+          <div className="flex flex-col gap-4 text-mobile-paragraph-1 md:text-paragraph-1 font-roboto text-dark/60">
             <p>
               Born and raised in the vibrant culinary landscape of Italy, my journey with food
               began in the heart of my family's kitchen. Surrounded by the aroma of fresh herbs,
@@ -85,7 +83,7 @@ export default function MyStorySection() {
         </div>
       </div>
 
-      <div className="mt-16 grid grid-cols-4 gap-x-4 gap-y-6">
+      <div className="mt-16 grid grid-cols-1 gap-4 gap-x-4 md:gap-y-6 md:grid-cols-4">
         {galleryImages.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-3xl">
             <img src={src} alt="" className="h-60 w-full object-cover" />

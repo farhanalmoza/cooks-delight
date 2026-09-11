@@ -69,14 +69,20 @@ function SearchIcon() {
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
+  const mobileInputRef = useRef<HTMLInputElement>(null)
   const navigate = useNavigate()
   const location = useLocation()
 
   useEffect(() => {
     if (searchOpen) inputRef.current?.focus()
   }, [searchOpen])
+
+  useEffect(() => {
+    if (mobileSearchOpen) mobileInputRef.current?.focus()
+  }, [mobileSearchOpen])
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
@@ -89,17 +95,23 @@ export default function Navbar() {
     setMobileMenuOpen(false)
   }, [location.pathname])
 
-  function submitSearch() {
+  useEffect(() => {
+    if (!mobileMenuOpen) setMobileSearchOpen(false)
+  }, [mobileMenuOpen])
+
+  function submitSearch(closeMobileMenu = false) {
     const trimmed = query.trim()
     if (trimmed) {
       navigate(`/recipes?search=${encodeURIComponent(trimmed)}`)
     }
     setSearchOpen(false)
+    setMobileSearchOpen(false)
     setQuery('')
+    if (closeMobileMenu) setMobileMenuOpen(false)
   }
 
   return (
-    <header className="relative mb-4 px-6 py-4 border border-dark/24 rounded-4xl">
+    <header className="sticky top-4 z-40 mb-4 border border-dark/24 rounded-4xl bg-background px-6 py-4">
       <div className="mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4">
         <NavLink to="/" className="flex w-fit items-center gap-2 text-md font-bold text-dark tracking-normal">
           <img src="/logo.svg" alt="Cooks Delight" className="h-10 w-10" />
@@ -236,21 +248,36 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Cari"
-              onClick={() => {
-                setMobileMenuOpen(false)
-                navigate('/recipes')
-              }}
+              onClick={() => setMobileSearchOpen((open) => !open)}
               className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full bg-light/10 text-light transition-colors hover:bg-light/20"
             >
               <SearchIcon />
             </button>
-            <a
-              href="#subscribe"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex flex-1 items-center justify-center rounded-full bg-light/10 py-3.5 text-sm font-bold uppercase tracking-wide text-light transition-colors hover:bg-light/20"
-            >
-              Subscribe
-            </a>
+            {mobileSearchOpen ? (
+              <input
+                ref={mobileInputRef}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') submitSearch(true)
+                  if (e.key === 'Escape') {
+                    setMobileSearchOpen(false)
+                    setQuery('')
+                  }
+                }}
+                placeholder="Cari resep..."
+                className="h-13 flex-1 rounded-full bg-light/10 px-5 text-sm text-light placeholder:text-light/50 focus:outline-none"
+              />
+            ) : (
+              <a
+                href="#subscribe"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex flex-1 items-center justify-center rounded-full bg-light/10 py-3.5 text-sm font-bold uppercase tracking-wide text-light transition-colors hover:bg-light/20"
+              >
+                Subscribe
+              </a>
+            )}
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-6">
