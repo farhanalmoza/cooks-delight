@@ -159,8 +159,8 @@ export default function MasteringBasics() {
 
   return (
     <div className="w-full">
-      <div className="mb-8 flex items-center justify-between">
-        <h2 className="text-header-2 font-montserrat uppercase text-dark">Mastering The Basics</h2>
+      <div className="mb-8 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+        <h2 className="text-mobile-header-2 md:text-header-2 font-montserrat uppercase text-dark">Mastering The Basics</h2>
         <div className="flex items-center gap-3">
           <button
             type="button"
@@ -186,28 +186,28 @@ export default function MasteringBasics() {
       <div
         ref={trackRef}
         onScroll={updateEdges}
-        className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth scrollbar-none [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory items-start gap-6 overflow-x-auto scroll-smooth scrollbar-none [&::-webkit-scrollbar]:hidden"
       >
         {pages.map((page, pageIdx) => (
           <div
             key={pageIdx}
-            className="grid w-full shrink-0 snap-start grid-cols-3 grid-rows-2 gap-x-4 gap-y-6"
+            className="grid w-full shrink-0 snap-start md:grid-cols-3 grid-rows-2 gap-x-4 gap-y-6"
           >
             {page.map((item) => (
               <div key={item.id} className="overflow-hidden rounded-3xl bg-light h-fit">
                 <img src={item.image} alt={item.title} className="h-56 w-full object-cover" />
-                <div className="rounded-b-3xl border border-dark/16 p-6">
-                  <h3 className="mb-2 truncate text-header-3 font-montserrat text-dark">
+                <div className="rounded-b-3xl border border-dark/16 p-4 md:p-6">
+                  <h3 className="mb-2 line-clamp-2 text-header-3 font-montserrat text-dark">
                     {item.title}
                   </h3>
                   <p className="mb-8 text-paragraph-2 text-dark/60">{item.description}</p>
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
                     <span className="text-small uppercase tracking-wide text-dark">
                       {item.minutes} min - {formatDate(item.date)}
                     </span>
                     <button
                       type="button"
-                      className="shrink-0 rounded-full border border-dark px-5 py-2.5 text-button font-roboto uppercase text-dark transition-colors hover:bg-dark hover:text-light"
+                      className="w-full shrink-0 rounded-full border border-dark px-5 py-2.5 text-center text-button font-roboto uppercase text-dark transition-colors hover:bg-dark hover:text-light md:w-fit"
                     >
                       Read More
                     </button>

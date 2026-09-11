@@ -17,14 +17,14 @@
   --text-headline-1: 80px;
   --text-headline-1--line-height: 1;
   --text-headline-1--letter-spacing: -0.01em;
-  --text-headline-1--font-weight: 800;
+  --text-headline-1--font-weight: 700;
   --text-header-2: 40px;
   --text-header-2--line-height: 1;
-  --text-header-2--font-weight: 800;
+  --text-header-2--font-weight: 700;
   --text-headline-2--letter-spacing: -0.01em;
   --text-header-3: 24px;
   --text-header-3--line-height: 1.2;
-  --text-header-3--font-weight: 700;
+  --text-header-3--font-weight: 600;
   --text-paragraph-1: 21px;
   --text-paragraph-1--line-height: 1.4;
   --text-paragraph-1--letter-spacing: 0.01em;
@@ -35,7 +35,7 @@
   --text-paragraph-2--letter-spacing: 0.01em;
   --text-subtitle: 18px;
   --text-subtitle--line-height: 1;
-  --text-subtitle--font-weight: 600;
+  --text-subtitle--font-weight: 500;
   --text-subtitle--letter-spacing: 0.02em;
   --text-tagline: 18px;
   --text-tagline--line-height: 1;
@@ -45,7 +45,7 @@
   --text-small: 12px;
   --text-small--line-height: 1.2;
   --text-small--letter-spacing: 0.01em;
-  --text-small--font-weight: 500;
+  --text-small--font-weight: 400;
   --text-link: 16px;
   --text-link--line-height: 1.2;
   --text-bold: 16px;
@@ -54,8 +54,10 @@
   /* Text styles - Mobile */
   --text-mobile-header-1: 38px;
   --text-mobile-header-1--line-height: 1;
+  --text-mobile-header-1--font-weight: 800;
+  --text-mobile-header-1--letter-spacing: -0.01em;
   --text-mobile-header-2: 26px;
-  --text-mobile-header-2--font-weight: 800;
+  --text-mobile-header-2--font-weight: 700;
   --text-mobile-header-2--line-height: 1;
   --text-mobile-header-2--letter-spacing: 0.01em;
   --text-mobile-header-3: 21px;
@@ -81,4 +83,14 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   color: var(--color-dark);
+}
+
+@layer components {
+  .badge-pill {
+    @apply w-fit rounded-xl bg-primary-3 px-4 py-1 text-button font-roboto uppercase text-background;
+  }
+
+  .heading-section {
+    @apply text-mobile-header-2 font-montserrat uppercase text-dark md:text-header-2;
+  }
 }

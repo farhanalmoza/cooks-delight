@@ -85,9 +85,7 @@ export default function RecipeDetailPage() {
     <div className="flex flex-col gap-6 pb-16">
       <div className="rounded-4xl border border-dark/16 mb-9 py-16">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 text-center">
-          <span className="w-fit rounded-full bg-primary-3 px-4 py-1.5 text-button font-roboto uppercase text-background">
-            Recipe
-          </span>
+          <span className="badge-pill">Recipe</span>
           <h1 className="text-headline-1 font-montserrat uppercase leading-none text-dark">
             {meal.strMeal}
           </h1>

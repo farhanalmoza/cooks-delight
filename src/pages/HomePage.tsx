@@ -11,10 +11,8 @@ export default function HomePage() {
 
       <div className="rounded-4xl bg-primary-4 w-full py-10 px-6 md:px-10 flex flex-col md:flex-row justify-between items-start md:items-end">
         <div>
-          <div className="w-fit rounded-xl bg-primary-3 px-4 py-1 text-button font-roboto uppercase text-background">
-            Explore
-          </div>
-          <h1 className="text-mobile-header-2 md:text-header-2 font-montserrat uppercase mt-4 mb-4">
+          <div className="badge-pill">Explore</div>
+          <h1 className="heading-section mt-4 mb-4">
             OUR DIVERSE <br />
             PALETTE
           </h1>

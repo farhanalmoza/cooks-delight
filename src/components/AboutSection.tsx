@@ -4,12 +4,8 @@ export default function AboutSection() {
   return (
     <section className="grid w-full md:grid-cols-[1.3fr_1fr_1.3fr] grid-rows-[auto_auto] gap-4 rounded-4xl bg-background p-4 pt-10 md:p-4 border border-dark/24">
       <div className="flex flex-col items-start justify-center">
-        <span className="w-fit rounded-xl bg-primary-3 px-4 py-1 text-button font-roboto uppercase text-background">
-          About Us
-        </span>
-        <h2 className="mt-4 mb-4 text-mobile-header-2 md:text-header-2 font-montserrat uppercase text-dark">
-          Our Culinary Chronicle
-        </h2>
+        <span className="badge-pill">About Us</span>
+        <h2 className="heading-section mt-4 mb-4">Our Culinary Chronicle</h2>
         <p className="md:mb-8 text-paragraph-2 text-dark/70">
           Our journey is crafted with dedication, creativity, and an unrelenting commitment to
           delivering delightful culinary experiences. Join us in savoring the essence of every

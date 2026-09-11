@@ -50,7 +50,7 @@ export default function FeaturedRecipes() {
   return (
     <div className="w-full rounded-4xl border border-dark/24 p-4 pt-10">
       <div className="mb-8 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
-        <h2 className="text-mobile-header-2 md:text-header-2 font-montserrat uppercase text-dark">Featured Recipes</h2>
+        <h2 className="heading-section">Featured Recipes</h2>
         <div className="flex items-center gap-3">
           <button
             type="button"

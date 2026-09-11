@@ -20,12 +20,8 @@ export default function RecipesShowcase() {
   return (
     <div className="w-full py-10">
       <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-        <span className="w-fit rounded-full bg-primary-3 px-4 py-1 text-small font-roboto uppercase text-background">
-          Recipes
-        </span>
-        <h2 className="mt-4 text-mobile-header-2 md:text-header-2 font-montserrat uppercase text-dark">
-          Embark on a Journey
-        </h2>
+        <span className="badge-pill">Recipes</span>
+        <h2 className="heading-section mt-4">Embark on a Journey</h2>
         <p className="mt-4 text-mobile-paragraph-2 md:text-paragraph-2 text-dark/60">
           With our diverse collection of recipes we have something to satisfy every palate.
         </p>

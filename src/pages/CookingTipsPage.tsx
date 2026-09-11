@@ -26,19 +26,19 @@ export default function CookingTipsPage() {
     <div className="flex flex-col pt-16">
       <div className="flex flex-col gap-10">
         <div className="grid items-center gap-4 md:grid-cols-12">
-          <h1 className="text-headline-1 font-montserrat uppercase leading-none text-dark md:col-span-7">
+          <h1 className="text-mobile-header-1 font-montserrat uppercase leading-none text-dark md:col-span-7 md:text-headline-1">
             Our Essential
             <br />
             Cooking Tips
           </h1>
-          <p className="text-paragraph-1 font-roboto text-dark/60 md:col-span-5 md:col-start-8 md:text-right">
+          <p className="text-mobile-paragraph-1 font-roboto text-dark/60 md:col-span-5 md:col-start-8 md:text-right md:text-paragraph-1">
             Welcome to Cooks Delight's treasure trove of cooking wisdom! Whether you're a seasoned
             chef or just starting your culinary journey, our cooking tips are designed to elevate
             your skills, enhance your kitchen experience, and bring joy to your cooking adventures.
           </p>
         </div>
 
-        <div className="grid gap-10 rounded-4xl border border-dark/16 p-10 md:grid-cols-3">
+        <div className="grid gap-10 rounded-4xl border border-dark/16 p-6 md:grid-cols-3 md:p-10">
           {tips.map((tip) => (
             <div key={tip.title} className="flex items-start gap-4">
               <img src={tip.icon} alt="" className="h-16 w-16 shrink-0" />

@@ -48,6 +48,14 @@ const items = [
   },
 ]
 
+function chunk<T>(items: T[], size: number): T[][] {
+  const pages: T[][] = []
+  for (let i = 0; i < items.length; i += size) {
+    pages.push(items.slice(i, i + size))
+  }
+  return pages
+}
+
 function formatDate(value: string) {
   const date = new Date(value)
   const day = date.toLocaleDateString('en-US', { day: '2-digit' })
@@ -93,9 +101,9 @@ export default function NourishingPalate() {
   }
 
   return (
-    <div className="w-full rounded-4xl bg-primary-4 p-10">
-      <div className="mb-8 flex items-center justify-between">
-        <h2 className="text-header-2 font-montserrat uppercase text-dark">Nourishing Every Palate</h2>
+    <div className="w-full rounded-4xl bg-primary-4 p-4 pt-16 pb-10 md:p-10">
+      <div className="mb-8 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+        <h2 className="heading-section">Nourishing Every Palate</h2>
         <div className="flex items-center gap-3">
           <button
             type="button"
@@ -121,29 +129,36 @@ export default function NourishingPalate() {
       <div
         ref={trackRef}
         onScroll={updateEdges}
-        className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth scrollbar-none [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory items-start gap-3 overflow-x-auto scroll-smooth scrollbar-none md:gap-6 [&::-webkit-scrollbar]:hidden"
       >
-        {items.map((item) => (
+        {chunk(items, 3).map((page, pageIdx) => (
           <div
-            key={item.id}
-            className="relative w-[calc(33.333%-16px)] shrink-0 snap-start overflow-hidden rounded-3xl"
+            key={pageIdx}
+            className="grid w-full shrink-0 snap-start grid-cols-1 gap-3 md:contents"
           >
-            <img src={item.image} alt={item.title} className="h-[520px] w-full object-cover" />
-            <div className="absolute inset-0 flex flex-col justify-end p-6 text-background">
-              <h3 className="mb-2 text-header-3 font-montserrat">{item.title}</h3>
-              <p className="mb-8 text-paragraph-2 text-background/80">{item.description}</p>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-small uppercase tracking-wide">
-                  {item.minutes} min - {formatDate(item.date)}
-                </span>
-                <button
-                  type="button"
-                  className="shrink-0 rounded-full border border-background px-5 py-2.5 text-button font-roboto uppercase text-background transition-colors hover:bg-background hover:text-dark"
-                >
-                  Read More
-                </button>
+            {page.map((item) => (
+              <div
+                key={item.id}
+                className="relative overflow-hidden rounded-3xl md:w-[calc(33.333%-16px)] md:shrink-0 md:snap-start"
+              >
+                <img src={item.image} alt={item.title} className="h-130 w-full object-cover" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 text-background">
+                  <h3 className="mb-2 text-header-3 font-montserrat">{item.title}</h3>
+                  <p className="mb-8 text-paragraph-2 text-background/80">{item.description}</p>
+                  <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+                    <span className="text-small uppercase tracking-wide">
+                      {item.minutes} min - {formatDate(item.date)}
+                    </span>
+                    <button
+                      type="button"
+                      className="w-full shrink-0 rounded-full border border-background px-5 py-2.5 text-center text-button font-roboto uppercase text-background transition-colors hover:bg-background hover:text-dark md:w-fit"
+                    >
+                      Read More
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         ))}
       </div>
